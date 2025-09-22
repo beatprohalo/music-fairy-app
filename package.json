@@ -6,7 +6,7 @@
   "author": "Your Name",
   "license": "MIT",
   "scripts": {
-    "dev": "concurrently \"vite\" \"electron my-desktop-app/main.js\"",
+    "dev": "concurrently \"vite\" \"NODE_ENV=development electron my-desktop-app/main.js\"",
     "start": "npm run build && electron my-desktop-app/main.js",
     "build": "vite build",
     "build:mac": "npm run build && electron-builder --mac"
