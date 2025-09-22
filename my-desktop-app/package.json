@@ -1,0 +1,21 @@
+{
+  "name": "my-desktop-app",
+  "version": "1.0.0",
+  "description": "My Electron + Vite app",
+  "main": "main.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"NODE_ENV=development electron .\"",
+    "start": "NODE_ENV=production electron .",
+    "build": "vite build",
+    "build:mac": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3",
+    "vite": "^5.4.0"
+  },
+  "dependencies": {}
+}

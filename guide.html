@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producer Collective - User Guide</title>
+    <style>
+        body {
+            font-family: 'Google Sans', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 3em;
+            color: #111;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 5px;
+        }
+        h2 {
+            font-size: 2em;
+            color: #222;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 30px;
+        }
+        p, li {
+            font-size: 1.1em;
+            color: #444;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        code {
+            background-color: #eef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        .note {
+            background-color: #fffbe6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .note strong {
+            color: #c79100;
+        }
+        .tip {
+            background-color: #e6f7ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .tip a {
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .tip button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+            font-size: 1em;
+            transition: background-color 0.2s ease-in-out;
+            white-space: nowrap;
+        }
+        .tip button:hover {
+            background-color: #0056b3;
+        }
+        .step {
+            display: block;
+            margin-top: 10px;
+        }
+        .ref-item {
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .ref-item h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            color: #1a0dab;
+        }
+        .ref-item ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .ref-item ul ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .ref-columns {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+        @media (max-width: 600px) {
+            .ref-columns {
+                columns: 1;
+                -webkit-columns: 1;
+                -moz-columns: 1;
+            }
+            .tip {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Producer Collective</h1>
+            <p>Your Official User Guide</p>
+        </header>
+
+        <section id="introduction">
+            <h2>1. Introduction: What is Producer Collective?</h2>
+            <p>Welcome to Producer Collective, an AI-powered music creation tool that lets you craft unique beats in real-time. By blending the signature styles of legendary producers and a wide array of instruments, you can explore new sonic territories and find inspiration instantly. This guide will walk you through everything you need to know to become a power user.</p>
+        </section>
+
+        <section id="interface">
+            <h2>2. The Main Interface & Controls</h2>
+            <p>The app is divided into a few key areas designed for intuitive navigation and control.</p>
+            <h3>The Producer Grid (Overview Page)</h3>
+            <p>This is your home base. It displays all available producers and instruments. A highlighted tab indicates that the producer is active in your current mix.</p>
+            <h3>Header Controls</h3>
+            <ul>
+                <li><strong>Play/Pause:</strong> The large central button starts and stops the music.</li>
+                <li><strong>Global Modifiers (Mood, Key, Scale):</strong> These dropdowns instantly change the emotional character, key, and scale of your entire track.</li>
+                <li><strong>BPM Display:</strong> Shows the real-time Beats Per Minute of the generated music. This is crucial for syncing with other software.</li>
+                <li><strong>Top-Left Buttons:</strong>
+                    <ul>
+                        <li><code>?</code>: Opens this user guide.</li>
+                        <li><code>MIDI</code>: Opens settings to connect a MIDI controller.</li>
+                        <li><code>ALL OFF</code>: A handy reset button that turns all knobs down to zero.</li>
+                        <li><code>AI Prompt</code>: Takes you to a page where you can control the board with text.</li>
+                        <li><code>Styles</code>: Opens a menu of pre-made templates to get you started quickly.</li>
+                        <li><code>Macros</code>: A view for controlling all master producer volumes at once, with an AI text prompt for quick adjustments.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="crafting">
+            <h2>3. Crafting Your Sound</h2>
+            <p>Click on any producer or instrument from the grid to enter the "Detail Page" where you can shape their sound.</p>
+
+            <h3>Producer Pods</h3>
+            <p>Standard producers have a master knob and three smaller "ingredient" knobs.</p>
+            <ul>
+                <li><strong>Master Knob:</strong> Controls the overall volume and presence of that producer in the mix.</li>
+                <li><strong>Ingredient Knobs:</strong> Fine-tune the specific elements of that producer's signature style (e.g., 'G-Funk synth lead' for Dr. Dre).</li>
+                <li><strong>Spice Buttons:</strong> Many producers have one or two 'Spice' buttons to add a signature flourish or change their style.</li>
+                <li><strong>Solo Drums Button:</strong> Instantly isolates the drum and percussion elements from that producer's style.</li>
+            </ul>
+
+            <h3>Instrument Pods & Style Selectors</h3>
+            <p>Instruments (like Violin, Cello, or the Drummer) have a master knob and one or more dropdown style selectors.</p>
+            <ul>
+                <li><strong>Master Knob:</strong> Controls the volume of the instrument.</li>
+                <li><strong>Style Selectors:</strong> These dropdowns let you choose the performance style. For example, you can make the Violin play in a 'Cinematic' or 'Pop' style.</li>
+            </ul>
+        </section>
+
+        <section id="ai-features">
+            <h2>4. AI-Powered Creativity</h2>
+            <p>Go beyond knobs with powerful AI features that write the music for you.</p>
+            <h3>The Styles Menu</h3>
+            <p>Click the green <strong>Styles</strong> button to access a list of curated musical templates. Clicking one will automatically set all the knobs and selectors to create that sound, giving you a perfect starting point.</p>
+            <h3>The AI Prompt Page</h3>
+            <p>Click the purple <strong>AI Prompt</strong> button to open a text box. Here, you can describe the music you want to create in your own words. The AI will interpret your request and adjust the entire mixing board to match your vision. For example:</p>
+            <code>Create a funky 70s disco track with a soulful bassline and an epic brass section.</code>
+            <h3>The Macros Page</h3>
+            <p>Click the blue <strong>Macros</strong> button to see all producer master volumes at once. You can use the text prompt here for simpler commands focused on mixing, like:</p>
+            <code>Turn up Dr. Dre and turn down Timbaland a bit.</code>
+        </section>
+        
+        <section id="daw-sync">
+            <h2>5. Syncing with a DAW (Example: Logic Pro)</h2>
+            <p>Integrate Producer Collective into your professional workflow by syncing it with your Digital Audio Workstation (DAW).</p>
+            <div class="note">
+                <strong>Prerequisite:</strong> To route audio from your browser to a DAW on macOS, you need a free virtual audio driver. We highly recommend <strong>BlackHole</strong>, available from <a href="https://existential.audio" target="_blank">existential.audio</a>.
+            </div>
+
+            <h3>Step-by-Step Audio Routing</h3>
+            <ol>
+                <li><strong>Install BlackHole.</strong></li>
+                <li><strong>Create a Multi-Output Device:</strong> Open the "Audio MIDI Setup" app on your Mac. Click the <code>+</code> icon and select "Create Multi-Output Device." Check the boxes for both your normal output (e.g., headphones) and "BlackHole."</li>
+                <li><strong>Set System Output:</strong> Right-click your new Multi-Output Device and select "Use This Device For Sound Output."</li>
+                <li><strong>Configure Logic Pro:</strong> In Logic's audio settings (<code>Logic Pro > Settings > Audio</code>), set your <strong>Input Device</strong> to "BlackHole."</li>
+                <li><strong>Record:</strong> Create a new Audio Track in Logic and set its input to Input 1-2. When you play music in the Producer Collective app, you can now record it directly into Logic.</li>
+            </ol>
+
+            <h3>Transport & Tempo Sync</h3>
+            <p class="step"><strong>Transport (Play/Stop):</strong> The app listens for MIDI transport commands from your DAW. When you press Play in Logic, the app will start. The "DAW SYNC ACTIVE" indicator will appear to confirm the connection.</p>
+            <p class="step"><strong>Tempo (BPM):</strong> This is a manual process. Play music in the app and note the <strong>BPM</strong> in the header. Manually type this number into your Logic Pro project's tempo field. Now your DAW's grid will be perfectly aligned with the music.</p>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>6. Troubleshooting & Tips</h2>
+            <ul>
+                <li><strong>Music won't play or stops suddenly:</strong> The app requires at least one knob to be turned up. If you see the error "Turn up a knob to start," simply adjust any knob. The "ALL OFF" button is a quick way to reset if you get lost.</li>
+                <li><strong>Filtered Prompts (Red Highlight):</strong> Occasionally, the AI might filter a prompt if it's too instructional. When this happens, the knob's text will turn red. Try a different prompt or adjust your mix.</li>
+                <li><strong>Creative Tip:</strong> The magic happens when you blend unexpected styles! Try combining a hip-hop producer with a cinematic string section, then use the "Mood" selector to instantly change the vibe from 'Epic' to 'Melancholy' to spark new ideas.</li>
+            </ul>
+        </section>
+
+        <section id="reference">
+            <h2>7. Appendix: Content & 'Tag' Reference</h2>
+            <div class="tip">
+                <span><strong>Tip:</strong> <a href="training_guide_downloadable.html" target="_blank">Click here to open a printer-friendly version</a> of this reference guide, perfect for copying into a document or saving as a PDF.</span>
+                <button id="copy-button">Copy Reference</button>
+            </div>
+            <p>This section provides a complete reference of all the creative "tags" available in Producer Collective, including Producers, Instruments, Preset Styles, and Global Modifiers.</p>
+            
+            <h3>7.1. Producers</h3>
+            <p>Producers offer a distinct sonic palette based on their iconic style. Each producer has a master volume and individual knobs for their signature "ingredients". Many also feature a unique "Spice" button for extra flavor.</p>
+            
+            <div class="ref-item">
+                <h4>Timbaland</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Bouncy, syncopated rhythm</li><li>Exotic world samples</li><li>Vocal chops and stutters</li></ul></li>
+                    <li><strong>Spice (Beatbox Rhythm):</strong> with a human beatbox foundation</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Dr. Dre</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>G-Funk synth lead</li><li>Hard-hitting clean drums</li><li>Deep piano melody</li></ul></li>
+                    <li><strong>Spice (Electric Guitar):</strong> with Dr. Dre style electric guitar licks and riffs</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>The Neptunes</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Minimalist quirky percussion</li><li>Spacey synth chords</li><li>Driving bassline</li></ul></li>
+                    <li><strong>Spice (Electric Guitar):</strong> with Neptunes style electric guitar licks and riffs</li>
+                    <li><strong>Secondary Spice (No Chad):</strong> in the solo style of Pharrell Williams, focusing on his signature drum programming and melodic hooks</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Scott Storch</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Lavish piano riff</li><li>Middle Eastern strings</li><li>Heavy 808s</li></ul></li>
+                    <li><strong>Spice (Exotic Scale):</strong> using an exotic, middle-eastern scale</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Kanye West</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Soulful vocal sample chop</li><li>Orchestral arrangement</li><li>Distorted synth bass</li></ul></li>
+                    <li><strong>Spice (Chipmunk Soul):</strong> with a pitched-up soul sample</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>808 Mafia</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Dark trap bell melody</li><li>Rapid-fire hi-hats</li><li>Booming sub-bass</li></ul></li>
+                    <li><strong>Spice (Soft Clipper):</strong> with an aggressive soft clipper on the master for loudness</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Quincy Jones</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Lush jazz chords</li><li>Funky horn section</li><li>Live string ensemble</li></ul></li>
+                    <li><strong>Spice (Room for God):</strong> with space for unexpected magic</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Hans Zimmer</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Epic, sweeping orchestral swells</li><li>Driving, powerful percussion</li><li>Atmospheric, evolving synth textures</li></ul></li>
+                    <li><strong>Spice (Low-end Brass):</strong> with a powerful low-end brass 'bwaaam' sound</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Metro Boomin</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Ominous, dark synth melody</li><li>Hard-hitting 808 bass</li><li>Crisp, intricate hi-hat patterns</li></ul></li>
+                    <li><strong>Spice (Dark Atmosphere):</strong> with a dark, cinematic atmosphere</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>J Dilla</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Off-kilter, unquantized drums</li><li>Warm, dusty soul sample chops</li><li>Thick, walking bassline</li></ul></li>
+                    <li><strong>Spice (Dilla Swing):</strong> with a lazy, behind-the-beat Dilla swing</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Teddy Riley</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Classic new jack swing rhythm</li><li>Punchy brass stabs and hits</li><li>Upbeat, funky synth bass</li></ul></li>
+                    <li><strong>Spice (R&B/Hip-Hop Fusion):</strong> fusing R&B chords with hip-hop drums</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Darkchild</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Futuristic, staccato synth stabs</li><li>Complex, syncopated drum programming</li><li>Layered vocal harmonies and ad-libs</li></ul></li>
+                    <li><strong>Spice (Stutter Edit):</strong> with complex vocal stutter edits</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>DJ Quik</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Smooth, melodic G-funk groove</li><li>Live-sounding, funky bassline</li><li>Classic talkbox vocal melody</li></ul></li>
+                    <li><strong>Spice (G-Funk Whine):</strong> with a high-pitched G-Funk synthesizer whine</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Questlove</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Live in-the-pocket hip-hop drums</li><li>Earthy neo-soul groove</li><li>Layered, textured percussion</li></ul></li>
+                    <li><strong>Spice (Live Feel):</strong> played with the feel of a live, in-the-pocket drummer</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Zaytoven</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Signature gospel-influenced piano chords</li><li>Bouncy, syncopated 808 patterns</li><li>Simple, catchy flute or bell melody</li></ul></li>
+                    <li><strong>Spice (Church Keys):</strong> played with a gospel church organ</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Mustard</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Minimalistic, catchy synth melody</li><li>Signature "Hey!" vocal chant</li><li>Deep, bouncy 808 bassline</li></ul></li>
+                    <li><strong>Spice (Ratchet Bounce):</strong> with a minimalist, ratchet music bounce</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Jimi Hendrix</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Psychedelic, blues-infused electric guitar</li><li>Innovative use of feedback and wah effects</li><li>Grooving, soulful drum and bass foundation</li></ul></li>
+                    <li><strong>Spice (Voodoo Chile):</strong> with heavy use of guitar feedback and a wah pedal</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Michael Hampton</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Heavy, distorted funk-rock guitar solos</li><li>Driving, syncopated P-Funk groove</li><li>Layered with psychedelic synth and clavinet</li></ul></li>
+                    <li><strong>Spice (Acid Guitar):</strong> with screaming, psychedelic funk-rock acid guitar licks</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Cornell Dupree</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Clean, melodic R&B guitar fills</li><li>Grooving soul and blues rhythm guitar</li><li>Smooth, tasteful jazz fusion licks</li></ul></li>
+                    <li><strong>Spice (In The Pocket):</strong> with an 'in the pocket' session musician feel</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>World Percussion</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Complex, polyrhythmic rock drum fills</li><li>Swinging, virtuosic jazz drumming</li><li>Eclectic Brazilian and world percussion</li></ul></li>
+                    <li><strong>Spice (Polyrhythm):</strong> with complex, layered polyrhythms</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Davido</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Upbeat, infectious Afrobeats rhythm</li><li>Catchy, melodic vocal ad-libs</li><li>Lush, layered synth and log drums</li></ul></li>
+                    <li><strong>Spice (Shekpe!):</strong> with an energetic 'shekpe!' ad-lib</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Sarz</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Signature "Sarz on the beat" vocal tag</li><li>Minimalist, hard-hitting Afropop beat</li><li>Unique, experimental synth textures</li></ul></li>
+                    <li><strong>Spice (Really?):</strong> with a 'Really?' vocal tag</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Afrobeats</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Driving log drum patterns</li><li>Lush, atmospheric synth pads</li><li>Catchy, melodic vocal ad-libs</li></ul></li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Sean John Combs</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Flashy funk and soul samples</li><li>Polished, radio-friendly production</li><li>Driving basslines and crisp drums</li></ul></li>
+                    <li><strong>Spice (Ad-libs):</strong> with his signature ad-libs and hype tracks</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Jermaine Dupri</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Smooth 90s R&B groove</li><li>Catchy pop-rap crossover beat</li><li>Bouncy basslines and crisp snaps</li></ul></li>
+                    <li><strong>Spice (Sample Mute):</strong> using the MPC mute group technique for smooth sample chops</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Mannie Fresh</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Bouncy New Orleans bounce rhythm</li><li>Layered, quirky synth melodies</li><li>Heavy 808 bass and claps</li></ul></li>
+                    <li><strong>Spice (Ad-libs & Scratches):</strong> with signature Mannie Fresh ad-libs and DJ scratches</li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Classic Blues</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>12-bar blues shuffle rhythm</li><li>Bending, emotional blues guitar solo</li><li>Raw, heartfelt harmonica melody</li></ul></li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>K-pop</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Catchy, polished synth-pop hooks</li><li>Tight, powerful dance-pop drum beat</li><li>Layered vocal harmonies and rap sections</li></ul></li>
+                </ul>
+            </div>
+            <div class="ref-item">
+                <h4>Tricky Stewart</h4>
+                <ul>
+                    <li><strong>Ingredients:</strong> <ul><li>Catchy, infectious synth riff</li><li>Hard-hitting, polished pop-R&B drums</li><li>Signature three-note vocal hook</li></ul></li>
+                    <li><strong>Spice (Umbrella Structure):</strong> with the massive, anthemic structure of a proper pop record</li>
+                </ul>
+            </div>
+
+            <h3>7.2. Instruments</h3>
+            <p>Instruments provide playable sounds that can be configured with various styles, genres, and performance techniques.</p>
+
+            <div class="ref-item"><h4>Spanish Folk</h4><ul><li><strong>Style:</strong> <ul><li>Flamenco</li><li>Sardana</li><li>Fandango</li><li>Jota</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Latin Music</h4><ul><li><strong>Style:</strong> <ul><li>Salsa</li><li>Reggaeton</li><li>Bachata</li></ul></li></ul></div>
+            <div class="ref-item"><h4>African Music</h4><ul><li><strong>Style:</strong> <ul><li>Afrobeats</li><li>Amapiano</li><li>Soukous</li><li>Highlife</li><li>Jùjú music</li><li>Mbalax</li><li>South African jazz</li><li>Gnawa music</li><li>Mbaqanga</li><li>Makossa</li><li>Afrobeat</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Asian Music</h4><ul><li><strong>Style:</strong> <ul><li>K-pop</li><li>J-pop</li><li>C-pop</li><li>Anison</li><li>Cantopop</li><li>Indonesian Pop</li><li>Korean Trot</li><li>Guofeng</li><li>Filipino Breakbeat</li><li>Traditional Chinese</li><li>Japanese Gagaku</li><li>Southeast Asian Gamelan</li><li>Indian Classical</li><li>Central Asian Folk</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Indian Music</h4><ul><li><strong>Style:</strong> <ul><li>Bollywood Music</li><li>Hindustani Classical</li><li>Carnatic Classical</li><li>Bhangra</li><li>Ghazal</li><li>Qawwali</li><li>Indian Pop</li><li>Indian Rock</li><li>Dhrupad</li><li>Khayal</li><li>Thumri</li><li>Tappa</li><li>Baul Folk</li><li>Lavani Folk</li><li>Bhajan</li><li>Kirtan</li></ul></li></ul></div>
+            <div class="ref-item"><h4>70's Disco & Funk</h4><ul><li><strong>Style:</strong> <ul><li>70's</li><li>Soul R&B</li><li>90's R&B</li><li>Disco</li><li>Funk</li><li>80's R&B</li><li>Disruptive</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Hip-Hop</h4><ul><li><strong>Style:</strong> <ul><li>80's</li><li>90's</li><li>2000's</li><li>Modern</li></ul></li><li><strong>Region:</strong> <ul><li>West Coast</li><li>East Coast</li><li>Midwest</li><li>Down South</li></ul></li><li><strong>Spice (No Drums):</strong> with no drums</li></ul></div>
+            <div class="ref-item"><h4>Drummer</h4><ul><li><strong>Drum Type:</strong> <ul><li>Acoustic Kit</li><li>808 Machine</li><li>909 Machine</li><li>LinnDrum</li><li>MPC Kit</li><li>Live Percussion</li><li>Human Beatbox</li></ul></li><li><strong>Regional Style:</strong> <ul><li>US Funk & Soul</li><li>New York Boom Bap</li><li>West Coast G-Funk</li><li>Southern Trap</li><li>UK Garage & Grime</li><li>Jamaican Reggae & Dub</li><li>Latin Percussion</li><li>Afrobeat</li></ul></li><li><strong>Performance Feel:</strong> <ul><li>In the pocket</li><li>Heavy hitting</li><li>Busy and syncopated</li><li>Swung and lazy</li><li>Driving and energetic</li><li>Minimalist pattern</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Violin</h4><ul><li><strong>Style:</strong> <ul><li>Cinematic</li><li>Pop</li><li>Hip-hop</li><li>R&B</li><li>Disruptive</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Viola</h4><ul><li><strong>Style:</strong> <ul><li>Cinematic</li><li>Pop</li><li>Hip-hop</li><li>R&B</li><li>Disruptive</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Cello</h4><ul><li><strong>Style:</strong> <ul><li>Cinematic</li><li>Pop</li><li>Hip-hop</li><li>R&B</li><li>Disruptive</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Double Bass</h4><ul><li><strong>Style:</strong> <ul><li>Cinematic</li><li>Pop</li><li>Hip-hop</li><li>R&B</li><li>Disruptive</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Brass Section</h4><ul><li><strong>Style:</strong> <ul><li>Cinematic</li><li>Pop</li><li>Hip-hop</li><li>R&B</li><li>Disruptive</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Marching Band</h4><ul><li><strong>Era:</strong> <ul><li>40's</li><li>50's</li><li>60's</li><li>70's</li><li>80's</li><li>90's</li><li>2000's</li><li>Modern</li></ul></li></ul></div>
+            <div class="ref-item"><h4>SYNTH</h4><ul><li><strong>Synth Type:</strong> <ul><li>Any Synth</li><li>Lead Synth</li><li>Bass Synth</li><li>Synth Pad</li><li>Arpeggiated Synth</li><li>Plucked Synth</li><li>Wobble Bass</li><li>Reese Bass</li><li>FM Synth</li><li>Wavetable Synth</li><li>Granular Synth</li></ul></li><li><strong>Era:</strong> <ul><li>60's</li><li>70's</li><li>80's</li><li>90's</li><li>2000's</li><li>Modern</li></ul></li></ul></div>
+            <div class="ref-item"><h4>PiANO</h4><ul><li><strong>Piano Type:</strong> <ul><li>Grand Piano</li><li>Upright Piano</li><li>Rhodes Electric Piano</li><li>Wurlitzer Electric Piano</li><li>Honky-Tonk Piano</li><li>Harpsichord</li><li>Clavinet</li></ul></li><li><strong>Style / Era:</strong> <ul><li>Baroque</li><li>Classical</li><li>Romantic</li><li>Ragtime</li><li>Bebop Jazz</li><li>Cool Jazz</li><li>Blues</li><li>Rock and Roll</li><li>Gospel</li><li>Modern Pop Ballad</li></ul></li><li><strong>Performance:</strong> <ul><li>Melodic</li><li>Chordal</li><li>Rhythmic</li><li>Arpeggiated</li><li>Virtuosic Solo</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Guitars</h4><ul><li><strong>Guitar Type:</strong> <ul><li>Acoustic Guitar (Steel)</li><li>Acoustic Guitar (Nylon)</li><li>Electric Guitar (Clean)</li><li>Electric Guitar (Distorted)</li><li>12-String Acoustic Guitar</li><li>Archtop Jazz Guitar</li><li>Lap Steel Guitar</li><li>Resonator Guitar</li><li>Bass Guitar</li></ul></li><li><strong>Style / Era:</strong> <ul><li>Delta Blues</li><li>Chicago Blues</li><li>50s Rock and Roll</li><li>60s Surf Rock</li><li>70s Classic Rock</li><li>80s Hard Rock</li><li>90s Grunge</li><li>00s Indie Rock</li><li>Modern Pop</li><li>Country</li><li>Jazz Fusion</li><li>Spanish Flamenco</li></ul></li><li><strong>Performance:</strong> <ul><li>Rhythm Chords</li><li>Fingerpicked Melody</li><li>Power Chords</li><li>Arpeggiated</li><li>Funky Strumming</li><li>Lead Solo</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Orchestra Percussion</h4><ul><li><strong>Instrument:</strong> <ul><li>Full Percussion Section</li><li>Timpani</li><li>Snare Drum</li><li>Tenor Drum</li><li>Bass Drum</li><li>Crash Cymbals</li><li>Suspended Cymbal</li><li>Triangle</li><li>Tambourine</li><li>Gong</li><li>Tam-Tam</li><li>Wood Block</li><li>Castanets</li><li>Glockenspiel</li><li>Xylophone</li><li>Vibraphone</li><li>Marimba</li><li>Tubular Bells</li><li>Celesta</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Wind</h4><ul><li><strong>Style:</strong> <ul><li>Cinematic</li><li>Folk</li><li>Jazz Solo</li><li>Classical</li><li>Pop Melody</li><li>Avant-Garde</li></ul></li><li><strong>Flute:</strong> <ul><li>None</li><li>Western Concert Flute</li><li>Piccolo</li><li>Pan Flute</li><li>Recorder</li><li>Irish Flute</li><li>Bansuri</li><li>Dizi</li><li>Shakuhachi</li><li>Ney</li><li>Quena</li><li>Ocarina</li><li>Suling</li><li>Native American Flute</li></ul></li><li><strong>Other Wind:</strong> <ul><li>None</li><li>Clarinet</li><li>Saxophone</li><li>Oboe</li><li>Duduk</li><li>Shehnai</li><li>Didgeridoo</li><li>Bagpipes</li><li>Accordion</li><li>Harmonica</li><li>Zurna</li></ul></li></ul></div>
+            <div class="ref-item"><h4>The Mellotron</h4><ul><li><strong>Model:</strong> <ul><li>1963 (Mk I)</li><li>1964 (Mk II)</li><li>1968 (M300)</li><li>1970 (M400)</li><li>2007 (M4000)</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Opera Singer</h4><ul><li><strong>Vocal Range:</strong> <ul><li>Soprano</li><li>Mezzo-Soprano</li><li>Contralto</li><li>Tenor</li><li>Baritone</li><li>Bass</li></ul></li><li><strong>Style:</strong> <ul><li>Lyrical</li><li>Dramatic</li><li>Coloratura</li><li>Bel Canto</li><li>Verismo</li><li>Wagnerian</li></ul></li></ul></div>
+            <div class="ref-item"><h4>Hand Drummer</h4><ul><li><strong>Drum Type:</strong> <ul><li>Full Hand Percussion</li><li>Congas</li><li>Bongos</li><li>Djembe</li><li>Tabla</li><li>Cajon</li><li>Udu</li><li>Doumbek</li><li>Bodhrán</li><li>Frame Drums</li></ul></li><li><strong>Regional Style:</strong> <ul><li>Afro-Cuban</li><li>West African</li><li>Middle Eastern</li><li>Indian Classical</li><li>Brazilian</li><li>Flamenco</li><li>Irish Folk</li><li>Modern Fusion</li></ul></li></ul></div>
+            
+            <h3>7.3. Preset Styles</h3>
+            <p>These are one-click templates that set up the entire board to create a specific genre or vibe. A great way to get started!</p>
+            <ul class="ref-columns">
+                <li>90's West Coast G-Funk</li>
+                <li>Modern Trap Banger</li>
+                <li>Cinematic Orchestral Score</li>
+                <li>Soulful R&B Groove</li>
+                <li>Funky Disco Party</li>
+                <li>Lo-fi Chill Hop</li>
+                <li>Afrobeats & Amapiano Fusion</li>
+                <li>Bollywood Wedding Anthem</li>
+                <li>Spicy Reggaeton Club Banger</li>
+                <li>K-Pop Power Ballad</li>
+                <li>Gritty Blues Rock Jam</li>
+                <li>J-Pop Anime Opening</li>
+            </ul>
+
+            <h3>7.4. Global Modifiers</h3>
+            <p>These dropdowns in the header affect the entire musical output.</p>
+            <h4>Moods</h4>
+            <ul class="ref-columns">
+                <li>None</li> <li>Uplifting</li> <li>Melancholy</li> <li>Energetic</li> <li>Chill</li> <li>Dark</li> <li>Romantic</li> <li>Epic</li> <li>Funky</li> <li>Dreamy</li> <li>Aggressive</li> <li>Experimental</li><li>Disruptive</li>
+            </ul>
+            <h4>Keys</h4>
+            <ul class="ref-columns">
+                <li>Any</li> <li>C</li> <li>C#</li> <li>D</li> <li>D#</li> <li>E</li> <li>F</li> <li>F#</li> <li>G</li> <li>G#</li> <li>A</li> <li>A#</li> <li>B</li>
+            </ul>
+            <h4>Scales</h4>
+            <ul class="ref-columns">
+                <li>Any</li> <li>Major</li> <li>Minor</li> <li>Dorian</li> <li>Phrygian</li> <li>Lydian</li> <li>Mixolydian</li> <li>Locrian</li> <li>Harmonic Minor</li> <li>Melodic Minor</li> <li>Blues</li> <li>Pentatonic Major</li> <li>Pentatonic Minor</li> <li>Whole Tone</li> <li>Diminished</li> <li>Phrygian Dominant</li> <li>Lydian Augmented</li> <li>Japanese (Insen)</li> <li>Hungarian Minor</li>
+            </ul>
+        </section>
+
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const copyButton = document.getElementById('copy-button');
+        if (copyButton) {
+            const originalText = copyButton.textContent;
+            copyButton.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('training_guide_downloadable.html');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok.');
+                    }
+                    const htmlContent = await response.text();
+                    
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlContent, 'text/html');
+                    const textToCopy = doc.body.innerText;
+
+                    await navigator.clipboard.writeText(textToCopy);
+                    
+                    copyButton.textContent = 'Copied!';
+                    copyButton.style.backgroundColor = '#28a745';
+                    
+                    setTimeout(() => {
+                        copyButton.textContent = originalText;
+                        copyButton.style.backgroundColor = '#007bff';
+                    }, 2500);
+                    
+                } catch (err) {
+                    console.error('Failed to copy reference material: ', err);
+                    copyButton.textContent = 'Error!';
+                    copyButton.style.backgroundColor = '#dc3545';
+                    setTimeout(() => {
+                        copyButton.textContent = originalText;
+                        copyButton.style.backgroundColor = '#007bff';
+                    }, 2500);
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
