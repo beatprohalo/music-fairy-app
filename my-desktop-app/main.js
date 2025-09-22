@@ -22,8 +22,13 @@ function createWindow() {
     win.show();
   });
 
-  // Load the Music Fairy app from the parent directory
-  win.loadFile(path.join(__dirname, '..', 'index.html'));
+  // Load from Vite dev server in development, otherwise load from file
+  if (process.env.NODE_ENV === 'development') {
+    win.loadURL('http://localhost:5173');
+    win.webContents.openDevTools(); // Open DevTools for debugging
+  } else {
+    win.loadFile(path.join(__dirname, '..', 'dist', 'index.html'));
+  }
 
   // Handle window closed
   win.on('closed', () => {
