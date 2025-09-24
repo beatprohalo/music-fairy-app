@@ -22,19 +22,15 @@ function createWindow() {
     win.show();
   });
 
-  // Set Content Security Policy
+  // Set Content Security Policy (simplified for development)
   const csp = [
-    "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://esm.sh",
+    "default-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob:",
-    "font-src 'self' data:",
+    "img-src 'self' data: blob: https:",
+    "font-src 'self' data: https:",
     "connect-src 'self' https: wss: ws:",
-    "media-src 'self' blob: data:",
-    "object-src 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-    "frame-ancestors 'none'"
+    "media-src 'self' blob: data: https:"
   ].join('; ');
 
   // Set CSP headers
@@ -48,7 +44,7 @@ function createWindow() {
   });
 
   // Load from Vite dev server in development, otherwise load from file
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
     win.loadURL('http://localhost:5173');
     win.webContents.openDevTools(); // Open DevTools for debugging
   } else {
