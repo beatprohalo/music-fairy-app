@@ -6,7 +6,7 @@
   "main": "my-desktop-app/main.cjs",
   "scripts": {
     "vite": "vite",
-    "electron": "wait-on http://localhost:5173 && electron .",
+    "electron": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
     "dev": "concurrently \"npm:vite\" \"npm:electron\"",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -15,17 +15,18 @@
   "dependencies": {
     "@google/genai": "^1.20.0",
     "@tonejs/midi": "^2.0.28",
+    "cross-env": "^10.0.0",
     "lit": "^3.1.2",
     "socket.io-client": "^4.7.4",
     "tone": "^15.0.4"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.9.0",
-    "electron": "^22.3.27",
     "@types/node": "^20.11.20",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "concurrently": "^8.2.2",
+    "electron": "^22.3.27",
     "eslint": "^8.57.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
