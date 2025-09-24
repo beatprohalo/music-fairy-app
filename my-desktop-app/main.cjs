@@ -48,43 +48,61 @@ function createWindow() {
     // Wait for Vite server to be ready before loading
     const waitForVite = async () => {
       const http = require('http');
-      const maxAttempts = 30;
+      const maxAttempts = 10;
       let attempts = 0;
       
       while (attempts < maxAttempts) {
         try {
           await new Promise((resolve, reject) => {
-            const req = http.get('http://localhost:5173', (res) => {
+            // Try both IPv4 and IPv6
+            const options = {
+              hostname: '127.0.0.1', // Use IPv4 explicitly
+              port: 5173,
+              path: '/',
+              method: 'GET',
+              timeout: 2000
+            };
+            
+            const req = http.request(options, (res) => {
               if (res.statusCode === 200) {
                 resolve();
               } else {
                 reject(new Error(`Status: ${res.statusCode}`));
               }
             });
-            req.on('error', reject);
-            req.setTimeout(1000, () => reject(new Error('Timeout')));
+            
+            req.on('error', (error) => {
+              reject(error);
+            });
+            
+            req.on('timeout', () => {
+              req.destroy();
+              reject(new Error('Timeout'));
+            });
+            
+            req.end();
           });
           console.log('✅ Vite server is ready');
           break;
         } catch (error) {
           attempts++;
-          console.log(`⏳ Waiting for Vite server... (${attempts}/${maxAttempts})`);
+          console.log(`⏳ Waiting for Vite server... (${attempts}/${maxAttempts}) - ${error.message}`);
           await new Promise(resolve => setTimeout(resolve, 1000));
         }
       }
       
       if (attempts >= maxAttempts) {
-        console.error('❌ Vite server not ready after 30 seconds');
+        throw new Error('❌ Vite server not ready after 10 seconds');
       }
     };
     
     waitForVite().then(() => {
-      win.loadURL('http://localhost:5173');
+      win.loadURL('http://127.0.0.1:5173'); // Use IPv4 explicitly
       win.webContents.openDevTools(); // Open DevTools for debugging
       console.log('✅ Loading Vite dev server in Electron');
     }).catch((error) => {
       console.error('❌ Failed to load Vite server:', error);
-      win.loadURL('data:text/html,<h1>Vite server not available</h1><p>Please start Vite with: npm run vite</p>');
+      win.loadURL('data:text/html,<h1>Vite server not available</h1><p>Please start Vite with: npm run vite</p><p>Error: ' + error.message + '</p>');
     });
   } else {
     win.loadFile(path.join(__dirname, '..', '..', 'dist', 'index.html'));
