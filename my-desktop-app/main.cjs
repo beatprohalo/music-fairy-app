@@ -9,10 +9,10 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'preload.cjs'),
       webSecurity: true
     },
-    icon: path.join(__dirname, 'assets', 'icon.png'), // Optional: add an icon
+    // icon: path.join(__dirname, 'assets', 'icon.png'), // Optional: add an icon
     titleBarStyle: 'default',
     show: false // Don't show until ready
   });
@@ -22,12 +22,37 @@ function createWindow() {
     win.show();
   });
 
+  // Set Content Security Policy
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://esm.sh",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob:",
+    "font-src 'self' data:",
+    "connect-src 'self' https: wss: ws:",
+    "media-src 'self' blob: data:",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'"
+  ].join('; ');
+
+  // Set CSP headers
+  win.webContents.session.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': [csp]
+      }
+    });
+  });
+
   // Load from Vite dev server in development, otherwise load from file
   if (process.env.NODE_ENV === 'development') {
     win.loadURL('http://localhost:5173');
     win.webContents.openDevTools(); // Open DevTools for debugging
   } else {
-    win.loadFile(path.join(__dirname, '..', 'dist', 'index.html'));
+    win.loadFile(path.join(__dirname, '..', '..', 'dist', 'index.html'));
   }
 
   // Handle window closed
