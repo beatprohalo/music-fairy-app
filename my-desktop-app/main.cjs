@@ -45,8 +45,47 @@ function createWindow() {
 
   // Load from Vite dev server in development, otherwise load from file
   if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-    win.loadURL('http://localhost:5173');
-    win.webContents.openDevTools(); // Open DevTools for debugging
+    // Wait for Vite server to be ready before loading
+    const waitForVite = async () => {
+      const http = require('http');
+      const maxAttempts = 30;
+      let attempts = 0;
+      
+      while (attempts < maxAttempts) {
+        try {
+          await new Promise((resolve, reject) => {
+            const req = http.get('http://localhost:5173', (res) => {
+              if (res.statusCode === 200) {
+                resolve();
+              } else {
+                reject(new Error(`Status: ${res.statusCode}`));
+              }
+            });
+            req.on('error', reject);
+            req.setTimeout(1000, () => reject(new Error('Timeout')));
+          });
+          console.log('✅ Vite server is ready');
+          break;
+        } catch (error) {
+          attempts++;
+          console.log(`⏳ Waiting for Vite server... (${attempts}/${maxAttempts})`);
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+      }
+      
+      if (attempts >= maxAttempts) {
+        console.error('❌ Vite server not ready after 30 seconds');
+      }
+    };
+    
+    waitForVite().then(() => {
+      win.loadURL('http://localhost:5173');
+      win.webContents.openDevTools(); // Open DevTools for debugging
+      console.log('✅ Loading Vite dev server in Electron');
+    }).catch((error) => {
+      console.error('❌ Failed to load Vite server:', error);
+      win.loadURL('data:text/html,<h1>Vite server not available</h1><p>Please start Vite with: npm run vite</p>');
+    });
   } else {
     win.loadFile(path.join(__dirname, '..', '..', 'dist', 'index.html'));
   }
