@@ -54,9 +54,9 @@ function createWindow() {
       while (attempts < maxAttempts) {
         try {
           await new Promise((resolve, reject) => {
-            // Try both IPv4 and IPv6
+            // Use localhost to match Vite's binding
             const options = {
-              hostname: '127.0.0.1', // Use IPv4 explicitly
+              hostname: 'localhost', // Use localhost to match Vite
               port: 5173,
               path: '/',
               method: 'GET',
@@ -97,7 +97,7 @@ function createWindow() {
     };
     
     waitForVite().then(() => {
-      win.loadURL('http://127.0.0.1:5173'); // Use IPv4 explicitly
+      win.loadURL('http://localhost:5173'); // Use localhost to match Vite
       win.webContents.openDevTools(); // Open DevTools for debugging
       console.log('✅ Loading Vite dev server in Electron');
     }).catch((error) => {
