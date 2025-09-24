@@ -29,10 +29,7 @@ export default defineConfig(({ mode }) => {
       },
       server: {
         port: 5173,
-        strictPort: true,
-        headers: {
-          'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://esm.sh; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https: wss: ws:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
-        }
+        strictPort: true
       }
     };
 });

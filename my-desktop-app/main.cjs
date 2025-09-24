@@ -22,27 +22,6 @@ function createWindow() {
     win.show();
   });
 
-  // Set Content Security Policy (simplified for development)
-  const csp = [
-    "default-src 'self' 'unsafe-inline' 'unsafe-eval'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
-    "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https:",
-    "font-src 'self' data: https:",
-    "connect-src 'self' https: wss: ws:",
-    "media-src 'self' blob: data: https:"
-  ].join('; ');
-
-  // Set CSP headers
-  win.webContents.session.webRequest.onHeadersReceived((details, callback) => {
-    callback({
-      responseHeaders: {
-        ...details.responseHeaders,
-        'Content-Security-Policy': [csp]
-      }
-    });
-  });
-
   // Load from Vite dev server in development, otherwise load from file
   if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
     win.loadURL('http://localhost:5173');
